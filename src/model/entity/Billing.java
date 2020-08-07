@@ -23,7 +23,7 @@ public class Billing {
 
 
     @Column(columnDefinition = "NUMBER")
-    private Long totalPrice;
+    private float totalPrice;
 
 
 
@@ -41,11 +41,11 @@ public class Billing {
         this.products = products;
     }
 
-    public Long getTotalPrice() {
+    public float getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(Long totalPrice) {
+    public void setTotalPrice(float totalPrice) {
         this.totalPrice = totalPrice;
     }
 

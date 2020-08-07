@@ -19,19 +19,32 @@ public class Product extends Entities {
 
 
     @Column(columnDefinition = "NUMBER")
-    private Long price;
+    private float price;
     @Column(columnDefinition = "NUMBER")
     private int numberOfProduct;
     @Column(columnDefinition = "VARCHAR2(20)")
     private String productDescription;
 
+    @Column(columnDefinition = "VARCHAR2(20)")
+    private String type;
 
+    public void setNumberOfProduct(int numberOfProduct) {
+        this.numberOfProduct = numberOfProduct;
+    }
 
-    public Long getPrice() {
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
@@ -47,9 +60,6 @@ public class Product extends Entities {
         return numberOfProduct;
     }
 
-    public void setNumberOfProduct(int numberOfProduct) {
-        this.numberOfProduct = numberOfProduct;
-    }
 
 
 }

@@ -13,7 +13,7 @@ public class Customer extends Person {
 
 
     @Column(columnDefinition = "NUMBER")
-    private Long payMoney;
+    private float payMoney;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "billingId")
@@ -29,13 +29,11 @@ public class Customer extends Person {
         this.billing = billing;
     }
 
-    public Long getPayMoney() {
+    public float getPayMoney() {
         return payMoney;
     }
 
-    public void setPayMoney(Long payMoney) {
+    public void setPayMoney(float payMoney) {
         this.payMoney = payMoney;
     }
-
-
 }
