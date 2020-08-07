@@ -4,7 +4,6 @@ package model.entity;
 import model.entity.products.Product;
 
 import javax.persistence.*;
-import javax.xml.crypto.Data;
 import java.util.Date;
 import java.util.List;
 

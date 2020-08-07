@@ -1,5 +1,6 @@
 package model.entity;
 
+import model.entity.person.Person;
 import model.entity.products.Product;
 
 import javax.persistence.*;
@@ -17,18 +18,6 @@ public class Image {
     @Column(columnDefinition = "VARCHAR2(20)")
     private String address;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "product_id")
-    private Product product;
-
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
 
     public Long getId() {
         return id;

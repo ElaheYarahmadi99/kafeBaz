@@ -1,19 +1,22 @@
 package model.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name= "billing")
 public class Login {
 
+    @Id
+    @Column(columnDefinition = "NUMBER")
+    @SequenceGenerator(name = "loginSeq",sequenceName ="login_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO , generator = "loginSeq")
     private Long id;
+
+    @Column(columnDefinition = "VARCHAR2(20)")
     private String emailId;
+    @Column(columnDefinition = "VARCHAR2(20)")
     private String password;
-    private boolean enabled;
 
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
 
     public Long getId() {
         return id;

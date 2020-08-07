@@ -1,11 +1,7 @@
 package model.entity.products;
 
-
-
-import model.entity.Billing;
 import model.entity.Entities;
-import org.hibernate.annotations.Polymorphism;
-import org.hibernate.annotations.PolymorphismType;
+import model.entity.Image;
 
 
 import javax.persistence.*;
@@ -27,6 +23,19 @@ public class Product extends Entities {
 
     @Column(columnDefinition = "VARCHAR2(20)")
     private String type;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "imgProduct_id")
+    private Image image;
+
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
 
     public void setNumberOfProduct(int numberOfProduct) {
         this.numberOfProduct = numberOfProduct;
