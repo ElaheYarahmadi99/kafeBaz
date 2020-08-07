@@ -18,7 +18,7 @@
           <factory-entry name="TehranUniversity" />
         </datasource-mapping>
         <naming-strategy-map />
-        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/web/WEB-INF/persistence.xml" />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
       </configuration>
     </facet>
   </component>
@@ -33,5 +33,7 @@
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="w3" level="application" />
     <orderEntry type="library" name="font-awesome" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="a076d05399" level="application" />
   </component>
 </module>
