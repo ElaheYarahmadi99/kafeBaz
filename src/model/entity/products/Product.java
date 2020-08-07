@@ -1,11 +1,7 @@
 package model.entity.products;
 
-
-
-import model.entity.Billing;
 import model.entity.Entities;
-import org.hibernate.annotations.Polymorphism;
-import org.hibernate.annotations.PolymorphismType;
+import model.entity.Image;
 
 
 import javax.persistence.*;
@@ -19,19 +15,45 @@ public class Product extends Entities {
 
 
     @Column(columnDefinition = "NUMBER")
-    private Long price;
+    private float price;
     @Column(columnDefinition = "NUMBER")
     private int numberOfProduct;
     @Column(columnDefinition = "VARCHAR2(20)")
     private String productDescription;
 
+    @Column(columnDefinition = "VARCHAR2(20)")
+    private String type;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "imgProduct_id")
+    private Image image;
 
 
-    public Long getPrice() {
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
+
+    public void setNumberOfProduct(int numberOfProduct) {
+        this.numberOfProduct = numberOfProduct;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
@@ -47,9 +69,6 @@ public class Product extends Entities {
         return numberOfProduct;
     }
 
-    public void setNumberOfProduct(int numberOfProduct) {
-        this.numberOfProduct = numberOfProduct;
-    }
 
 
 }

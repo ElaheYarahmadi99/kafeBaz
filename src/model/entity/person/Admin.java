@@ -14,7 +14,7 @@ public class Admin extends Person {
     @Column(columnDefinition = "VARCHAR2(20)")
     private String username;
     @Column(columnDefinition = "NUMBER")
-    private Long salary;
+    private float salary;
 
 
     public String getPassword() {
@@ -33,12 +33,11 @@ public class Admin extends Person {
         this.username = username;
     }
 
-
-    public Long getSalary() {
+    public float getSalary() {
         return salary;
     }
 
-    public void setSalary(Long salary) {
+    public void setSalary(float salary) {
         this.salary = salary;
     }
 }

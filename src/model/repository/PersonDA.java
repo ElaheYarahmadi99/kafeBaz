@@ -4,7 +4,7 @@ import model.entity.person.Person;
 
 import java.util.List;
 
-public interface PersonDA<T extends Person> {
+public interface PersonDA<T> {
 
     void insertToDB(T person);
     void updateDB(T person);

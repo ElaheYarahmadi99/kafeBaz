@@ -4,19 +4,21 @@ import model.entity.person.Person;
 
 import java.util.List;
 
-public class PersonDAImpl implements PersonDA {
+public abstract class PersonDAImpl implements PersonDA {
+
+
     @Override
-    public void insertToDB(Person person) {
+    public void insertToDB(Object person) {
 
     }
 
     @Override
-    public void updateDB(Person person) {
+    public void updateDB(Object person) {
 
     }
 
     @Override
-    public void delete(Person person) {
+    public void delete(Object person) {
 
     }
 
