@@ -2,13 +2,19 @@ package model.entity;
 
 import model.entity.products.Product;
 
-import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
+@Entity
+@Table(name= "image")
 public class Image {
 
+
+    @Id
+    @Column(columnDefinition = "NUMBER")
+    @SequenceGenerator(name = "imageSeq",sequenceName ="image_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO , generator = "imageSeq")
     private Long id;
+    @Column(columnDefinition = "VARCHAR2(20)")
     private String address;
 
     @OneToOne(cascade = CascadeType.ALL)
