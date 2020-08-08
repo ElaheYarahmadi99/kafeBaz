@@ -1,6 +1,6 @@
 package model.entity.person;
 
-import model.entity.Billing;
+import model.entity.products.Product;
 
 import javax.persistence.*;
 import java.util.List;
@@ -15,18 +15,17 @@ public class Customer extends Person {
     @Column(columnDefinition = "NUMBER")
     private float payMoney;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "billingId")
-    private Billing billing;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customerId")
+    private List<Product> products;
 
-
-    public Billing getBilling() {
-        return billing;
+    public List<Product> getProducts() {
+        return products;
     }
 
-    public void setBilling(Billing billing) {
-        this.billing = billing;
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 
     public float getPayMoney() {

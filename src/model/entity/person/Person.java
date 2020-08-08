@@ -13,7 +13,7 @@ import java.util.Date;
 @PrimaryKeyJoinColumn(name = "person_ID", referencedColumnName ="entities_ID")
 */
 
-@Entity
+@Entity(name = "person")
 @Table(name= "person")
 public class Person extends Entities {
 

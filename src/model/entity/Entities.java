@@ -19,8 +19,6 @@ public class Entities {
     private String name;
     @Column(columnDefinition = "Date")
     private Date start_Date;
-    @Column(columnDefinition = "Date")
-    private Date end_Date;
 
     public Long getId() {
         return id;
@@ -46,11 +44,4 @@ public class Entities {
         this.start_Date = start_Date;
     }
 
-    public Date getEnd_Date() {
-        return end_Date;
-    }
-
-    public void setEnd_Date(Date end_Date) {
-        this.end_Date = end_Date;
-    }
 }

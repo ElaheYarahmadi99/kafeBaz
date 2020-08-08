@@ -2,15 +2,18 @@ package model.entity;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name= "billing")
+
+
+@Entity(name = "login")
+@Table(name= "login")
 public class Login {
 
     @Id
     @Column(columnDefinition = "NUMBER")
     @SequenceGenerator(name = "loginSeq",sequenceName ="login_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.AUTO , generator = "loginSeq")
-    private Long id;
+    private Long login_id;
+
 
     @Column(columnDefinition = "VARCHAR2(20)")
     private String emailId;
@@ -18,12 +21,12 @@ public class Login {
     private String password;
 
 
-    public Long getId() {
-        return id;
+    public Long getLogin_id() {
+        return login_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setLogin_id(Long login_id) {
+        this.login_id = login_id;
     }
 
     public String getEmailId() {

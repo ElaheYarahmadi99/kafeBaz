@@ -2,7 +2,7 @@ package model.entity.person;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "management")
 @Table(name= "management")
 public class Management extends Person {
 

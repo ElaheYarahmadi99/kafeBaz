@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-@Entity
+@Entity(name = "billing")
 @Table(name= "billing")
 public class Billing {
 
@@ -17,34 +17,20 @@ public class Billing {
     @GeneratedValue(strategy = GenerationType.AUTO , generator = "billingSeq")
     private Long id;
 
-    @Column(columnDefinition = "Date")
-    private Date orderDate;
 
+    @Column(columnDefinition = "Date")
+    private Date order_Date;
 
     @Column(columnDefinition = "NUMBER")
-    private float totalPrice;
+    private Long totalPrice;
 
 
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "customer_id")
-    private List<Product> products;
-
-
-
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
-
-    public float getTotalPrice() {
+    public Long getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(float totalPrice) {
+    public void setTotalPrice(Long totalPrice) {
         this.totalPrice = totalPrice;
     }
 
@@ -56,11 +42,11 @@ public class Billing {
         this.id = id;
     }
 
-    public Date getOrderDate() {
-        return orderDate;
+    public Date getOrder_Date() {
+        return order_Date;
     }
 
-    public void setOrderDate(Date orderDate) {
-        this.orderDate = orderDate;
+    public void setOrder_Date(Date order_Date) {
+        this.order_Date = order_Date;
     }
 }

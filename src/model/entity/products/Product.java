@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 
-@Entity
+@Entity(name = "product")
 @Table(name= "product")
 public class Product extends Entities {
 
